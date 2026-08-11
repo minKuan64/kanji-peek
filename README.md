@@ -39,25 +39,6 @@ Requires Node 18+ and Chrome 116+.
 
 You can also drag and drop an image file onto the panel.
 
-### Results appear in the side panel
-
-Not as an overlay on the page. When you share a single Chrome tab, only the tab content is transmitted — the side panel stays outside the captured area, while an on-page overlay would be visible to everyone in the meeting.
-
-Each word shows its dictionary form, kana reading, romaji, Sino-Vietnamese reading, and English meaning. Expand **Từng chữ** at the bottom for a per-character breakdown, useful when OCR misreads a stroke or the word is not in the dictionary.
-
-### Fixing OCR mistakes
-
-The recognized text appears in an editable box above the results. Correct it and the word list updates as you type — one wrong stroke is enough to miss a word.
-
-### Options
-
-- **Hiện cả từ thuần kana** — also list pure-hiragana function words (particles, `する`, `なる`…). Off by default so the list stays focused on kanji.
-- **Ảnh chỉ có một dòng** — switches OCR to single-line mode. Turn this on when you capture exactly one line; it is more accurate for that case.
-
-### Changing the shortcut
-
-Go to `chrome://extensions/shortcuts`. Clicking the toolbar icon opens the panel without starting a capture.
-
 ---
 
 Dictionary data from [JMdict/KANJIDIC2](http://www.edrdg.org/) (EDRDG, CC BY-SA 4.0) and [Unihan](https://www.unicode.org/charts/unihan.html) (Unicode). OCR by [Tesseract](https://github.com/tesseract-ocr/tesseract) (Apache 2.0).
