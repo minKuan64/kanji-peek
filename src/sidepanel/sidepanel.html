@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kanji Peek</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="brand">
+        <span class="mark">漢</span>
+        <span>Kanji Peek</span>
+      </div>
+      <span class="status" id="status" role="status" aria-live="polite"></span>
+    </header>
+
+    <div class="tools">
+      <button id="capture" class="primary" type="button">
+        Quét vùng
+        <kbd>⌥⇧K</kbd>
+      </button>
+      <button id="clear" class="ghost" type="button" title="Xoá kết quả">Xoá</button>
+    </div>
+
+    <textarea
+      id="input"
+      class="input"
+      rows="2"
+      spellcheck="false"
+      placeholder="Gõ hoặc dán chữ Nhật ở đây — hoặc dán ảnh chụp màn hình (⌘V)"
+    ></textarea>
+
+    <div class="options">
+      <label><input type="checkbox" id="opt-kana" /> Hiện cả từ thuần kana</label>
+      <label><input type="checkbox" id="opt-line" /> Ảnh chỉ có một dòng</label>
+    </div>
+
+    <!-- Ô văn bản OCR nằm NGOÀI #results: kết quả được dựng lại mỗi lần gõ sửa,
+         nếu ô này nằm bên trong thì sẽ bị gỡ khỏi DOM và mất con trỏ. -->
+    <div id="ocrbox"></div>
+
+    <main id="results" class="results">
+      <div class="empty" id="empty">
+        <p><strong>Alt+Shift+K</strong> rồi kéo chọn vùng có kanji.</p>
+        <p class="muted">
+          Với ứng dụng ngoài Chrome (Zoom, Teams bản cài đặt): chụp bằng
+          <strong>⌘⌃⇧4</strong> để ảnh vào clipboard, rồi bấm <strong>⌘V</strong> ở đây.
+        </p>
+      </div>
+    </main>
+
+    <!-- Tesseract là bản UMD cổ điển, phải nạp trước module để có biến toàn cục. -->
+    <script src="../../vendor/tesseract/tesseract.min.js"></script>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

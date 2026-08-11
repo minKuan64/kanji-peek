@@ -1,0 +1,23 @@
+{
+  "name": "kanji-peek",
+  "version": "1.0.0",
+  "description": "Chrome extension tra nhanh cách đọc và nghĩa kanji bằng OCR vùng màn hình",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm run vendor && npm run build:dict && npm run icons",
+    "vendor": "node tools/vendor.mjs",
+    "build:dict": "node --max-old-space-size=6000 tools/build-dict.mjs",
+    "icons": "node tools/make-icons.mjs",
+    "test:dict": "node tools/test-dict.mjs",
+    "test:ocr": "node tools/test-ocr.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "tesseract.js": "^7.0.0",
+    "tesseract.js-core": "^7.0.0"
+  },
+  "private": true
+}
